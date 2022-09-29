@@ -111,6 +111,7 @@ const addTodo = () => {
     let dueDate = datePicker.value;
     
     createTodo(title, dueDate);
+    location.reload();
     render();
 }
 
@@ -164,7 +165,7 @@ const updateTodo = event => {
 const render = () => {
 
     //reset output
-    document.querySelector('#todo-list').innerHTML = '';
+    document.querySelector('#todo-list').innerText = '';
 
     //render list
     todos.forEach(todo => {
