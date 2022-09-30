@@ -1,7 +1,8 @@
+/* input section */
 body{
     font-family: 'Nunito Sans', sans-serif;
-    background-color: #EAD637;
-    color: #1B1B1E;
+    background-color: rgb(234, 244, 243);
+    color: #22577a;
 }
 
 main{
@@ -44,7 +45,6 @@ button{
     padding: 0.5rem 1rem;
     font-size: 1rem;
     font-weight: 700;
-    background-color: transparent;
     color: white;
     background-color: #57CC99;
     border: none;
@@ -52,3 +52,65 @@ button{
     cursor: pointer;
 }
 
+
+/* todo list */
+#todo-list div{
+    position: relative;
+    margin: 1rem 0;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    overflow-wrap: break-word;
+    border-radius: 15px;
+    background-color: #c7f9cc;
+}
+
+#todo-list div button{ 
+    position: absolute;
+    bottom: -10px;
+    right: -5px;
+    margin: .3rem .2rem;
+    padding: 0.2rem .5rem;
+    font-size: .8rem;
+    font-weight: 400;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #ef476f;
+}
+
+#todo-list div button:first-of-type{ 
+    right: 55px;
+    margin-left: .5rem;
+    margin-right: 0;
+    background-color: #49b6ff;
+}
+
+#todo-list div input[type='checkbox']{
+    position: absolute;
+    top: -6px;
+    left: -8px;
+    width: 1.3em;
+    height: 1.3em;
+    outline: none;
+    cursor: pointer;
+}
+
+#todo-list div input[type='checkbox']:checked + span {
+    text-decoration: line-through;
+    font-style: italic;
+    font-weight: 400;
+}
+
+#todo-list div span span{
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+#todo-list div span span:last-of-type{
+    margin-left: 1rem;
+    font-weight: 400;
+    font-size: .9rem;
+    font-style: italic;
+}
