@@ -98,6 +98,16 @@ const saveTodos = () => {
     localStorage.setItem('todos', JSON.stringify(todos));
 }
 
+//Validate
+const validateValues = (title) => {
+
+    if(title.length === 0) {
+        alertInvalidInput();
+    } else {
+        return true;
+    }
+}
+
 
 //**Controller Section**
 
@@ -107,12 +117,15 @@ const addTodo = () => {
     let textbox = document.querySelector('#todo-title');
     let title = textbox.value;
 
-    let datePicker = document.querySelector('#date-picker');
-    let dueDate = datePicker.value;
-    
-    createTodo(title, dueDate);
-    location.reload();
-    render();
+    if (validateValues(title) === true){
+        let datePicker = document.querySelector('#date-picker');
+        let dueDate = datePicker.value;
+        
+        createTodo(title, dueDate);
+        location.reload();
+        render();
+    }
+
 }
 
 //Delete button
@@ -151,15 +164,22 @@ const updateTodo = event => {
     let textbox = document.querySelector(`#textbox${todoId}`);
     let title = textbox.value;
     
-    let datePicker = document.querySelector(`#date${todoId}`);
-    let dueDate = datePicker.value;
+    if (validateValues(title) === true){
+        let datePicker = document.querySelector(`#date${todoId}`);
+        let dueDate = datePicker.value;
 
-    updatingTodo(todoId, title, dueDate);
-    render();
+        updatingTodo(todoId, title, dueDate);
+        render();
+    }
 }
 
 
 //**View Section**
+
+// Alert Invalid Input
+const alertInvalidInput = () => {
+    alert("To-do task cannot be empty");
+}
 
 //render page
 const render = () => {
@@ -189,6 +209,7 @@ const render = () => {
             let updateBtn = document.createElement('button');
             updateBtn.innerText = 'Update';
             updateBtn.id = todo.id;
+            updateBtn.className = 'update-btn';
             updateBtn.onclick = updateTodo;
             element.appendChild(updateBtn);                
             
