@@ -111,6 +111,7 @@ const addTodo = () => {
     let dueDate = datePicker.value;
     
     createTodo(title, dueDate);
+    location.reload();
     render();
 }
 
@@ -164,7 +165,7 @@ const updateTodo = event => {
 const render = () => {
 
     //reset output
-    document.querySelector('#todo-list').innerHTML = '';
+    document.querySelector('#todo-list').innerText = '';
 
     //render list
     todos.forEach(todo => {
@@ -192,12 +193,23 @@ const render = () => {
             element.appendChild(updateBtn);                
             
         } else {
-            
-            element.innerText = todo.title + ' ' + todo.dueDate;
+            // display each todo span - this span will hold the todo text and date
+            let todoLabel = document.createElement('span');
+
+            // todo text span
+            let labelText = document.createElement('span');
+            labelText.innerText = todo.title;
+            todoLabel.appendChild(labelText);
+           
+            // todo date span
+            let labelDate = document.createElement('span');
+            labelDate.innerText = todo.dueDate;
+            todoLabel.appendChild(labelDate);
+
+            element.appendChild(todoLabel);
             
             let editBtn = document.createElement('button');
             editBtn.innerText = 'Edit';
-            editBtn.style = 'margin-left: 12px;';
             editBtn.onclick = editTodo;
             editBtn.id = todo.id;
             element.appendChild(editBtn);

@@ -1,4 +1,116 @@
+/* input section */
 body{
-    font-family: "Roboto";
-    background: #f1ffce;
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: rgb(234, 244, 243);
+    color: #22577a;
+}
+
+main{
+    margin: 1rem;
+}
+
+h1{
+    text-align: center;
+}
+
+button{
+    font-family: inherit;
+}
+
+#inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#inputs input{
+    margin: 5px 0;
+    padding: .5rem;
+    width: 100%;
+    height: 2rem;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 1rem;
+    border-radius: 15px;
+}
+
+#inputs input[type="date"]{
+    cursor: pointer;
+}
+
+#inputs button{
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    background-color: #57CC99;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+/* todo list */
+#todo-list div{
+    position: relative;
+    margin: 1rem 0;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    overflow-wrap: break-word;
+    border-radius: 15px;
+    background-color: #c7f9cc;
+}
+
+#todo-list div button{ 
+    position: absolute;
+    bottom: -10px;
+    right: -5px;
+    margin: .3rem .2rem;
+    padding: 0.2rem .5rem;
+    font-size: .8rem;
+    font-weight: 400;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #ef476f;
+}
+
+#todo-list div button:first-of-type{ 
+    right: 55px;
+    margin-left: .5rem;
+    margin-right: 0;
+    background-color: #49b6ff;
+}
+
+#todo-list div input[type='checkbox']{
+    position: absolute;
+    top: -6px;
+    left: -8px;
+    width: 1.3em;
+    height: 1.3em;
+    outline: none;
+    cursor: pointer;
+}
+
+#todo-list div input[type='checkbox']:checked + span {
+    text-decoration: line-through;
+    font-style: italic;
+    font-weight: 400;
+}
+
+#todo-list div span span{
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+#todo-list div span span:last-of-type{
+    margin-left: 1rem;
+    font-weight: 400;
+    font-size: .9rem;
+    font-style: italic;
 }
