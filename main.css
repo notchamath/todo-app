@@ -1,12 +1,18 @@
 /* input section */
 body{
+    margin: 0;
+    padding: 0;
+    min-width: 300px;
+    box-sizing: border-box;
     font-family: 'Nunito Sans', sans-serif;
     background-color: rgb(234, 244, 243);
     color: #22577a;
 }
 
 main{
-    margin: 1rem;
+    margin: auto;
+    padding: 2rem;
+    max-width: 700px;
 }
 
 h1{
@@ -53,12 +59,12 @@ button{
 }
 
 
-/* todo list */
+/* todo list section*/
 #todo-list div{
     position: relative;
     margin: 1rem 0;
-    padding: 1rem;
-    font-size: 1rem;
+    padding: 1rem 1.2rem;
+    font-size: 1.2rem;
     font-weight: 600;
     overflow-wrap: break-word;
     border-radius: 15px;
@@ -89,28 +95,44 @@ button{
 
 #todo-list div input[type='checkbox']{
     position: absolute;
-    top: -6px;
+    top: -8px;
     left: -8px;
-    width: 1.3em;
-    height: 1.3em;
+    width: 1.4em;
+    height: 1.4em;
     outline: none;
     cursor: pointer;
 }
 
 #todo-list div input[type='checkbox']:checked + span {
     text-decoration: line-through;
+    text-decoration-thickness: 3px;
     font-style: italic;
     font-weight: 400;
-}
-
-#todo-list div span span{
-    font-weight: 700;
-    font-size: 1rem;
 }
 
 #todo-list div span span:last-of-type{
-    margin-left: 1rem;
-    font-weight: 400;
+    margin-left: .8rem;
+    font-weight: 700;
     font-size: .9rem;
     font-style: italic;
+    color: #ef476f;
+}
+
+
+/* Updates section */
+#todo-list div input{
+    padding: .3rem;
+    margin: .3rem;
+    width: 60%;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    border-radius: 15px;
+}
+
+#todo-list div button.update-btn{
+    position: absolute;
+    right: 10%;
+    bottom: 50%;
+    transform: translateY(75%);
 }

@@ -189,6 +189,7 @@ const render = () => {
             let updateBtn = document.createElement('button');
             updateBtn.innerText = 'Update';
             updateBtn.id = todo.id;
+            updateBtn.className = 'update-btn';
             updateBtn.onclick = updateTodo;
             element.appendChild(updateBtn);                
             
