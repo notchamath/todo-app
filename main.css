@@ -1,4 +1,6 @@
 /* input section */
+
+/* min-width makes app responsive in smaller screens */
 body{
     margin: 0;
     padding: 0;
@@ -9,20 +11,24 @@ body{
     color: #22577a;
 }
 
+/* margin auto centers main in body, max-width makes app responsive on bigger screens */
 main{
     margin: auto;
     padding: 2rem;
     max-width: 700px;
 }
 
+/* center Header */
 h1{
     text-align: center;
 }
 
+/* set button font-family */
 button{
     font-family: inherit;
 }
 
+/* Inputs are in a column */
 #inputs{
     display: flex;
     flex-direction: column;
@@ -30,6 +36,7 @@ button{
     width: 100%;
 }
 
+/* input styles */
 #inputs input{
     margin: 5px 0;
     padding: .5rem;
@@ -41,11 +48,11 @@ button{
     font-size: 1rem;
     border-radius: 15px;
 }
-
 #inputs input[type="date"]{
     cursor: pointer;
 }
 
+/* submit button styles */
 #inputs button{
     margin: 1rem;
     padding: 0.5rem 1rem;
@@ -59,7 +66,10 @@ button{
 }
 
 
+
 /* todo list section*/
+
+/* each to-do task styles */
 #todo-list div{
     position: relative;
     margin: 1rem 0;
@@ -71,6 +81,7 @@ button{
     background-color: #c7f9cc;
 }
 
+/* styles for edit and delete buttons on each todo */
 #todo-list div button{ 
     position: absolute;
     bottom: -10px;
@@ -86,6 +97,7 @@ button{
     background-color: #ef476f;
 }
 
+/* styles specifically for edit and update buttons only */
 #todo-list div button:first-of-type{ 
     right: 55px;
     margin-left: .5rem;
@@ -93,6 +105,8 @@ button{
     background-color: #49b6ff;
 }
 
+
+/* styles for checkbox */
 #todo-list div input[type='checkbox']{
     position: absolute;
     top: -8px;
@@ -103,6 +117,7 @@ button{
     cursor: pointer;
 }
 
+/* cross out the task text if checkbox is checked */
 #todo-list div input[type='checkbox']:checked + span {
     text-decoration: line-through;
     text-decoration-thickness: 3px;
@@ -110,6 +125,7 @@ button{
     font-weight: 400;
 }
 
+/* styles for the date */
 #todo-list div span span:last-of-type{
     margin-left: .8rem;
     font-weight: 700;
@@ -119,7 +135,10 @@ button{
 }
 
 
+
 /* Updates section */
+
+/* styles for update input field */
 #todo-list div input{
     padding: .3rem;
     margin: .3rem;
@@ -130,6 +149,7 @@ button{
     border-radius: 15px;
 }
 
+/* styles specifically for update button only */
 #todo-list div button.update-btn{
     position: absolute;
     right: 10%;
